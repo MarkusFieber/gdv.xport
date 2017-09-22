@@ -143,7 +143,7 @@ public final class XmlHelper {
             switch (event.getEventType()) {
                 case XMLStreamConstants.CHARACTERS:
                     String key = name.getLocalPart();
-                    String value = props.getProperty(key, "") + "\n" + event.asCharacters().toString().trim();
+                    String value = props.getProperty(key, "") + "\n" + event.asCharacters().getData().trim();
                     props.setProperty(key, value.trim());
                     break;
                 case XMLStreamConstants.END_ELEMENT:
